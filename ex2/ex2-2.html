@@ -1,0 +1,33 @@
+<html>
+<head>
+<title>简单验证</title>
+
+<script type="text/javascript">
+
+function validate_input(x) //x为表单中输入变量
+{ 
+with (x)
+	{
+	if (x>=1&&x<=100)
+	alert("你输入对了，谢谢！");
+
+   else 
+       alert("请输入一个从1到100之间的数字");
+	}
+}
+</script>
+
+</head> 
+<body> 
+
+
+  <p align="left"><font size="6"><B>简单验证</B></font></p>
+  <hr>
+      <form method="post" name="form1" action="">
+	 <p align="left">请输入一个1到100之间的数字:<input type = "text" name = "n" size = "12" value="0" /></p>
+	 <p align="left">
+        <input type = "button" value="提交" onclick = "validate_input(document.form1.n.value)" /></p>
+      </form>
+
+</body>
+</html> 

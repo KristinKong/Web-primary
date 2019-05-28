@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>用户留言输入表单</title>
+     <style type="text/css">
+        table td{
+            font-size: small;
+        }
+    </style>
+    <script type="text/javascript">
+        function validate_leave_message() {
+            var t = document.getElementById("leave_message").value;
+             if(t==""){
+                    alert("留言为空！请输入留言");
+                    return false;
+                }
+                else if(t.search("坏蛋")>=0){
+                    alert("留言中含有敏感词，输入无效！");
+                    return false;
+                }
+                else {
+                    alert("留言输入有效");
+                    return true;
+                }
+        }
+        function validate_reset() {
+            var t = document.getElementsByName("input").value;
+            if(t==null){
+                alert("信息为空！无需清空！")
+            }
+            else {
+                t.remove();
+                alert("信息已清空！");
+            }
+        }
+    </script>
+</head>
+<br>
+<h2>请填写留言</h2>
+<form>
+    <table>
+       <tr>
+           <td><p>姓&nbsp&nbsp&nbsp&nbsp名:</p></td>
+           <td><input type="text" name="u_name" ></td>
+       </tr>
+        <tr>
+            <td><p>性&nbsp&nbsp&nbsp&nbsp别:</p></td>
+            <td>
+                <select name="sex">
+                    <option value="male">男</option>
+                    <option value="female">女</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td><p>电&nbsp&nbsp&nbsp&nbsp话:</p></td>
+            <td><input type="tel" name="phone_number"></td>
+        </tr>
+        <tr>
+            <td><p>电子邮件:</p></td>
+            <td><input type="email" name="e_mail"></td>
+        </tr>
+        <tr>
+            <td>留言:</td>
+            <td></td>
+        </tr>
+    </table>
+
+<textarea id="leave_message" rows="15" cols="50"onsubmit="return validate_leave_message()"></textarea>
+    <br><br>
+    <button type="submit" onclick=" validate_leave_message()">提交</button>
+    <button type="reset" onclick="validate_reset()">重写</button>
+</form>
+
+</body>
+</html>
